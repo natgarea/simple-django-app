@@ -1,0 +1,11 @@
+# IDE files
+.idea/
+
+# Database
+db.sqlite3
+
+# Secrets
+.env
+
+# Static files
+*/__pycache__/
