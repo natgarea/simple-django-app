@@ -4,8 +4,8 @@
 # Database
 db.sqlite3
 
-# Secrets
+# Environments
 .env
 
-# Static files
-*/__pycache__/
+# Byte-compiled / optimized / DLL files
+__pycache__/
