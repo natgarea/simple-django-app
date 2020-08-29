@@ -1,0 +1,25 @@
+{% load static %}
+
+<html>
+    <head>
+        <link href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/starter-template.css' %}" rel="stylesheet"/>
+    </head>
+    <body>
+
+        {% include 'navbar.html' %}
+
+        <main role="main" class="container">
+          <div class="starter-template">
+              <h1>Bootstrap starter template</h1>
+              {% block content %}
+              {% endblock %}
+          </div>
+        </main>
+
+        <script src="../static/node_modules/jquery/dist/jquery.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../static/node_modules/jquery/dist/jquery.slim.min.js"><\/script>')</script>
+        <script src="../static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+    </body>
+</html>
