@@ -1,8 +1,11 @@
+{% load static %}
+
 <html>
     <head>
-
+        <link href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet"/>
     </head>
     <body>
         <p>{{ sample_var }}</p>
+        <p>{{ other_var }}</p>
     </body>
 </html>
