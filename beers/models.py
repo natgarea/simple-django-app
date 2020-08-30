@@ -7,7 +7,7 @@ from core.models import CommonInfo
 
 class Company(CommonInfo):
     name = models.CharField('Name', max_length=50)
-    tax_number = models.IntegerField('Tax number', unique=True)
+    tax_number = models.IntegerField('Tax number')
 
     class Meta:
         verbose_name = "Company"
