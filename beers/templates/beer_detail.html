@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <h3>{{ beer }}</h3>
+
+    <p>Creada el: {{ beer.last_modified_at|date:"D d M Y" }}</p>
+    <p>Modificada por: {{ beer.last_modified_by|default_if_none:"nadie" }}</p>
+    <p>Inicial: {{ beer.name|first }}</p>
+    <p>¿Filtrada? {{ beer.is_filtered|yesno:"claro,para nada,no sé" }}</p>
+
+{% endblock %}

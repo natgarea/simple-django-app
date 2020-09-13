@@ -30,24 +30,25 @@ def beer_list_view(request):
         company = Company.objects.filter(tax_number=12345).first()
     else:
         company = Company.objects.create(name="Company", tax_number=12345)
+        new_beer = Beer(name=random.randint(1, 100), company=company)
+        new_beer.save()
+        print("beer_list", beer_list)
 
-    new_beer = Beer(name=random.randint(1, 100), company=company)
-    new_beer.save()
-    print("beer_list", beer_list)
+    # SAMPLE QUERIES
 
-    beer_list_sorted = Beer.objects.all().order_by('name')
-    print("beer_list_sorted", beer_list_sorted)
+    #beer_list_sorted = Beer.objects.all().order_by('name')
+    #print("beer_list_sorted", beer_list_sorted)
 
-    beer_list_filtered = Beer.objects.filter(Q(name__startswith="E") | Q(abv__gte=5))
-    print("beer_list_filtered", beer_list_filtered)
+    #beer_list_filtered = Beer.objects.filter(Q(name__startswith="E") | Q(abv__gte=5))
+    #print("beer_list_filtered", beer_list_filtered)
 
-    beer_list_filtered = Beer.objects.filter(company__name__startswith='C', abv__lte=1)
-    print("beer_list_filtered", beer_list_filtered)
+    # beer_list_filtered = Beer.objects.filter(company__name__startswith='C', abv__lte=1)
+    # print("beer_list_filtered", beer_list_filtered)
 
     # beer_list_filtered.delete()
-    print("beer_list_filtered", beer_list_filtered)
+    # print("beer_list_filtered", beer_list_filtered)
 
-    return render(request, 'beer_list.html', {'beers': beer_list, 'beer_list_filtered': beer_list_filtered})
+    return render(request, 'beer_list.html', {'beers': beer_list})
 
 
 def beer_detail_view(request, pk):

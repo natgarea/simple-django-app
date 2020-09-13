@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <h3>Beer collection</h3>
+
+            {% comment %}
+                Comentario invisible
+            {% endcomment %}
+
+            <ul>
+                {% for beer in beers %}
+
+                    {% if beer.abv > 1 and True %}
+                        <li><a href="{% url 'beer-detail-view' beer.pk %}"> Name: {{ beer }}, alcohol: {{ beer.abv }}</a></li>
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+
+            {% include "clock.html" %}
+        </div>
+    </div>
+
+{% endblock %}
